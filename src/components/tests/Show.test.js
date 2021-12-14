@@ -13,12 +13,12 @@ const testShow = {
         {
             id: 0,
             name: "season 1",
-            episode: []
+            episodes: []
         },
         {
             id: 1,
             name: "season 2",
-            episode: []
+            episodes: []
         }
     ]
 }
@@ -49,4 +49,12 @@ test('handleSelect is called when an season is selected', () => {
     expect(handleSelect).toBeCalled();
 });
 
-test('component renders when no seasons are selected and when rerenders with a season passed in', () => {});
+test('component renders when no seasons are selected and when rerenders with a season passed in', () => {
+    const { rerender } = render (<Show show = {testShow}  selectedSeason = {"none"} />);
+    let episodes = screen.queryByTestId("episodes-container");
+    expect(episodes).not.toBeInTheDocument();
+
+    rerender(<Show show = {testShow}  selectedSeason = {"1"} />);
+    episodes = screen.queryByTestId("episodes-container");
+    expect(episodes).toBeInTheDocument();
+});
