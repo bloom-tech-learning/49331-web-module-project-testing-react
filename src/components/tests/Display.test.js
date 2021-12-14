@@ -5,8 +5,7 @@ import userEvent from '@testing-library/user-event';
 
 import Display from './../Display';
 
-
-test('renders without errors with no props', ()=>{
+test('renders without errors with no props', ()=>{ 
     render (<Display />);
 });
 
