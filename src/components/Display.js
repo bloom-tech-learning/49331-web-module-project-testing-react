@@ -5,6 +5,24 @@ import Show from "./Show";
 
 import fetchShow from '../api/fetchShow';
 
+const testShow = {
+    //add in approprate test data structure here.
+    name: "test show",
+    summary: "test summary",
+    seasons: [
+        {
+            id: 0,
+            name: "season 1",
+            episodes: []
+        },
+        {
+            id: 1,
+            name: "season 2",
+            episodes: []
+        }
+    ]
+}
+
 const Display = (props) => {
     const [show, setShow] = useState(null);
     const [selectedSeason, setSelectedSeason] = useState("none");
