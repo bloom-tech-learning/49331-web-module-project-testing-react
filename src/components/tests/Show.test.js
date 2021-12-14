@@ -9,7 +9,7 @@ const testShow = {
     //add in approprate test data structure here.
     name: "test show",
     summary: "test summary",
-    season: [
+    seasons: [
         {
             id: 0,
             name: "season 1",
@@ -23,7 +23,9 @@ const testShow = {
     ]
 }
 
-test('renders without errors', ()=>{});
+test('renders without errors', ()=>{
+    render (<Show show = {testShow}  selectedSeason = { "none" } />)
+});
 
 test('renders Loading component when prop show is null', () => {});
 
